@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+  <head>
+    <title>AutoZone Rentals</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body>
+
+      <%= yield %>
+
+    <div id = 'ajax-cars'>
+      <h3>Current Car Information</h3>
+    </div>
+
+  </body>
+</html>

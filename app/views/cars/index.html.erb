@@ -1,0 +1,33 @@
+<%= render 'navbar' %>
+
+<h2>All Cars</h2>
+<% if current_user.admin == "0" || current_user.admin == nil %>
+
+    <% @cars.each do |car| %>
+    <%= link_to "Go to #{car.location}", car_path(car) %><br>
+
+    <% end %><br>
+
+  <br>
+
+<% end %>
+
+<% if current_user.admin == "1" %>
+  <h1>**ADMIN***</h1>
+
+  <% @cars.each do |car| %>
+  Name <%= car.name %><br>
+  Location: <%= car.location %>
+  <h4><%= link_to "Edit Car #{car.name}", edit_car_path(car) %></h4>
+  <% end %>
+
+  <br>
+
+  <h2>Create a New Car</h2>
+  <%= render 'form' %>
+  <br>
+
+  <h3><%= link_to "See All Bookings", bookings_path %></h3>
+  <br>
+
+<% end %>

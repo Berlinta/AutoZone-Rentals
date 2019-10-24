@@ -1,0 +1,19 @@
+<%= render 'navbar' %>
+
+<h2> Car Information</h2>
+Car Name: <%= @car.name %><br>
+Location: <%= @car.location %><br>
+Users Booked on this car: <%= @car.users.count %><br>
+
+<!--
+<% if @car.users.count > 3 %>
+  <h1><%= "This car is booked please choose another!" %>"</h1>
+<% else %>
+
+  <%= link_to "See All Cars", cars_path %><br>
+  <% if current_user.admin == "0" || current_user.admin == nil %><br>
+    <%= link_to "Book This Car", new_car_booking_path(@car.id) %><br>
+  <% end %>
+<% end %>
+-->
+

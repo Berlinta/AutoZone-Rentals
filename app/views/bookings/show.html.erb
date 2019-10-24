@@ -1,0 +1,14 @@
+<%= render 'navbar' %>
+
+  <h3>Confirmation</h3><br>
+
+  Dirver: <%= @booking.user.name %><br>
+  Car Name: <%= @booking.car.name %><br>
+  Location: <%= @booking.car.location %><br>
+  Note: <%= @booking.description %><br>
+  Date Booked: <%= @booking.created_at %><br>
+  Balance: <% if @booking.paid == 1 %>
+    <%= "Paid" %>
+    <% else %>
+    <%= "Payment Due" %>
+    <% end %><br>

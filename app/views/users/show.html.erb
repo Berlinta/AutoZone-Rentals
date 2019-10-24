@@ -1,0 +1,28 @@
+<%= render 'navbar' %>
+
+<h3>User Profile</h3>
+<% if current_user.admin == "1" %>
+
+  <h1>**ADMIN***</h1>
+
+  <a class="navbar-brand" href="http://localhost:3000/cars" >Create and Edit Cars</a>
+
+
+
+<% else %>
+
+<h2><%= @user.name %>'s Booked Cars </h2>
+<h4>Email: <%= @user.email %></h4>
+
+<br>
+
+<% @user.cars.each do |car| %>
+
+  <%= car.name %><br>
+  <%= link_to car.location, car_path(car) %><br>
+
+    <% car.bookings.where(:paid => 0).each do |b| %>
+      <%= "**PAYMENT REQUIRED**" %>
+      <% end %><br>
+  <% end %><br>
+<% end %><br>

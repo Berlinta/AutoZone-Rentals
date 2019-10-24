@@ -1,0 +1,17 @@
+<h2>Log In</h2>
+
+  <%= form_for User.new, url: '/signin' do |f| %>
+
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+
+    <%= f.submit 'Log In'%>
+
+  <% end %>
+
+<br>
+
+<h4><%=link_to 'Create an Account', new_user_path %></h4>

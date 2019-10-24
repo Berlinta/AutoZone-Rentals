@@ -1,0 +1,12 @@
+// Place all the styles related to the flights controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.background{
+width:100%;
+height:auto;
+background: url('yoururl.jpg') no-repeat center;
+background-position: 50% 50%;
+background-size: 100% cover!important;
+overflow:hidden;
+}

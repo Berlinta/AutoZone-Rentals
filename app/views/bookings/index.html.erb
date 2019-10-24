@@ -1,0 +1,17 @@
+  <%= render 'navbar' %>
+
+<% if current_user.admin == "1" %>
+  <h3><%= "**ADMIN***" %></h3>
+
+  <% @bookings.each do |booking| %>
+    Car: <%= booking.car.name %><br>
+  <% end %><br>
+
+<% else %>
+
+  <h2><%= current_user.name%> Bookeds Cars</h2>
+      <% current_user.bookings.map do |booking| %>
+      Car: <%= booking.car.name %>
+      <%= link_to "Confirmation", booking_path(booking) %><br>
+      <% end %>
+<% end %>

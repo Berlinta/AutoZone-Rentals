@@ -218,7 +218,6 @@ Car.prototype.showcarhtml = function() {
   }
 
 Booking.prototype.newcarbooking = function() {
-
   if (this.paid === 1)
     return (`
      <h3>Booking Confirmation</h3>
